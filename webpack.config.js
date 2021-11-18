@@ -1,26 +1,35 @@
 const webpack = require("webpack");
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: path.resolve(__dirname, "src", "index.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/",
     filename: "bundle.js",
   },
   devtool: "eval-source-map",
-  devServer: {
-    static: path.resolve(__dirname, "./dist"),
-  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                [
+                  "@babel/preset-env",
+                  {
+                    targets: "defaults",
+                  },
+                ],
+                "@babel/preset-react",
+              ],
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
