@@ -5,7 +5,6 @@
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:react-hooks/exhaustive-deps",
     "prettier"
   ],
   "rules": {
@@ -29,6 +28,11 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
   }
 }
