@@ -1,7 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const App = () => {
-  return <h1>Create React App Without CRA ☘️</h1>;
-};
+class App extends Component {
+  render() {
+    return (
+      <div className="container">
+        <h2>MERN-STACK ToDo App</h2>
+      </div>
+    );
+  }
+}
 
 export default App;

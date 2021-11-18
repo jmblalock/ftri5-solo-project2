@@ -1,27 +1,45 @@
 const webpack = require("webpack");
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "./src/index.js"),
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
+    filename: "bundle.js",
+  },
+  devtool: "eval-source-map",
+  devServer: {
+    static: path.resolve(__dirname, "./dist"),
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
     ],
+  },
+  stats: {
+    colors: true,
+    reasons: true,
+    chunks: true,
   },
   resolve: {
     extensions: ["*", ".js", ".jsx"],
   },
-  output: {
-    path: path.resolve(__dirname, "./dist"),
-    filename: "bundle.js",
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
-  devServer: {
-    static: path.resolve(__dirname, "./dist"),
-    hot: true,
-  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
 };

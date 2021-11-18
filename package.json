@@ -1,7 +1,7 @@
 {
   "name": "ftri5-solo-project2",
   "version": "1.0.0",
-  "description": "",
+  "description": "ftri5-solo-project",
   "main": "index.js",
   "scripts": {
     "webpack-dev-server": "webpack-dev-server",
@@ -22,15 +22,24 @@
   },
   "homepage": "https://github.com/jmblalock/ftri5-solo-project2#readme",
   "dependencies": {
+    "@popperjs/core": "^2.10.2",
+    "bootstrap": "^5.1.3",
+    "css-loader": "^6.5.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "sass": "^1.43.4",
+    "style-loader": "^3.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
+    "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
+    "html-webpack-plugin": "^5.5.0",
+    "postcss-loader": "^6.2.0",
     "react-hot-loader": "^4.13.0",
+    "sass-loader": "^12.3.0",
     "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0"
