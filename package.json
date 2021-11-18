@@ -4,10 +4,8 @@
   "description": "ftri5-solo-project",
   "main": "index.js",
   "scripts": {
-    "webpack-dev-server": "webpack-dev-server",
-    "dev": "npm run webpack-dev-server -- --mode development",
+    "dev": "webpack-dev-server -- --mode development",
     "webpack": "webpack --watch",
-    "start": "webpack serve --config ./webpack.config.js --mode development --port 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

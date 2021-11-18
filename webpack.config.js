@@ -8,6 +8,10 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
+  devServer: {
+    open: true,
+    port: 9000,
+  },
   devtool: "eval-source-map",
   module: {
     rules: [
